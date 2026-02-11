@@ -22,7 +22,6 @@ def display_menu():
     return input("Select option: ")
 
 #Feature 3
-# 3
 def add_member(names, ranks, divs, ids):
     print("\n--- ADD CREW MEMBER ---")
     new_id = input("Enter new ID: ")
@@ -42,3 +41,17 @@ def add_member(names, ranks, divs, ids):
     ranks.append(new_rank)
     divs.append(new_div)
     print("Crew member added successfully.")
+
+#Feature 4
+def remove_member(names, ranks, divs, ids):
+    print("\n--- REMOVE CREW MEMBER ---")
+    target_id = input("Enter ID to remove: ")
+    if target_id in ids:
+        idx = ids.index(target_id)
+        removed_name = names.pop(idx)
+        ranks.pop(idx)
+        divs.pop(idx)
+        ids.pop(idx)
+        print(f"{removed_name} (ID: {target_id}) removed.")
+    else:
+        print("Error: ID not found.")
