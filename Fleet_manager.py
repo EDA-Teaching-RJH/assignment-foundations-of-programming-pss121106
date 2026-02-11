@@ -77,3 +77,16 @@ def display_roster(names, ranks, divs, ids):
     print("-" * 60)
     for i in range(len(names)):
         print(f"{ids[i]:<10} {names[i]:<20} {ranks[i]:<15} {divs[i]:<15}")
+
+#Feature 7
+def search_crew(names, ranks, divs, ids):
+    query = input("Enter name to search: ").lower()
+    found = False
+    print("\nSearch Results:")
+    for i in range(len(names)):
+        if query in names[i].lower():
+            print(f"Found: {names[i]} - {ranks[i]} - {divs[i]} (ID: {ids[i]})")
+            found = True
+    if not found:
+        print("No matches found.")
+        
