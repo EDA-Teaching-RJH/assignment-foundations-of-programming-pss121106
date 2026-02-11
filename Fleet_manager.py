@@ -20,3 +20,25 @@ def display_menu():
     print("8. Count High Officers")
     print("9. Exit")
     return input("Select option: ")
+
+#Feature 3
+# 3
+def add_member(names, ranks, divs, ids):
+    print("\n--- ADD CREW MEMBER ---")
+    new_id = input("Enter new ID: ")
+    
+    if new_id in ids:
+        print("Error: ID already exists.")
+        return
+    new_rank = input("Enter Rank (Captain, Commander, Lieutenant, Ensign): ")
+    valid_ranks = ["Captain", "Commander", "Lieutenant", "Ensign", "Lt. Commander"]
+    if new_rank not in valid_ranks:
+        print("Error: Invalid Rank.")
+        return
+    new_name = input("Enter Name: ")
+    new_div = input("Enter Division: ")
+    ids.append(new_id)
+    names.append(new_name)
+    ranks.append(new_rank)
+    divs.append(new_div)
+    print("Crew member added successfully.")
