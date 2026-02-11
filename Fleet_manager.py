@@ -116,3 +116,45 @@ def calculate_payroll(ranks):
         total_cost += pay_scale.get(rank, 0)
     return total_cost
 
+#Feature 10
+def count_officers(ranks):
+    count = 0
+    for rank in ranks:
+        if rank == "Captain" or rank == "Commander":
+            count += 1
+    return count
+
+def run_system_monolith():
+    print("BOOTING SYSTEM...")
+    time.sleep(1)
+    print("WELCOME TO FLEET COMMAND")
+    
+    names, ranks, divs, ids = init_database()
+    while True:
+        choice = display_menu()
+        if choice == "1":
+            display_roster(names, ranks, divs, ids)
+        elif choice == "2":
+            add_member(names, ranks, divs, ids)
+        elif choice == "3":
+            remove_member(names, ranks, divs, ids)
+        elif choice == "4":
+            update_rank(names, ranks, ids)
+        elif choice == "5":
+            search_crew(names, ranks, divs, ids)
+        elif choice == "6":
+            filter_by_division(names, divs)
+        elif choice == "7":
+            cost = calculate_payroll(ranks)
+            print(f"Total Monthly Payroll: {cost} credits")
+        elif choice == "8":
+            officers = count_officers(ranks)
+            print("High ranking officers: " + str(officers))
+        elif choice == "9":
+            print("Shutting down...")
+            break
+        else:
+            print("Invalid option. Please try again.")
+
+if __name__ == "__main__":
+    run_system_monolith()
