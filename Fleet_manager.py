@@ -65,7 +65,15 @@ def update_rank(names, ranks, ids):
         current_rank = ranks[idx]
         print(f"Current rank for {names[idx]}: {current_rank}")
         new_rank = input("Enter new rank: ")
-        ranks[idx] = new_rank # Update only the rank list at that index
+        ranks[idx] = new_rank 
         print("Rank updated.")
     else:
         print("Error: ID not found.")
+
+#Feaure 6
+def display_roster(names, ranks, divs, ids):
+    print("\n--- CURRENT ROSTER ---")
+    print(f"{'ID':<10} {'Name':<20} {'Rank':<15} {'Division':<15}")
+    print("-" * 60)
+    for i in range(len(names)):
+        print(f"{ids[i]:<10} {names[i]:<20} {ranks[i]:<15} {divs[i]:<15}")
