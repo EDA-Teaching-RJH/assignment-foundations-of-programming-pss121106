@@ -1,4 +1,4 @@
-Old system Changes Breakdown
+# Old system Changes Breakdown
 I will be explaining the chages that I made to the old system to allow it to run without crashing.
 1. The first bug I fixed was on line 16 where I added a += 1 inside a while loop to stop a never finishing loop.
 2. The second bug was on line 28 where I changed the colon to a compartor. From opt : "1" to opt == "1".
@@ -11,3 +11,11 @@ I will be explaining the chages that I made to the old system to allow it to run
 9. My ninth Change is adding an if __name__ == "__main__": at the end of the code as it allows the code to be controlled exactly when it runs. It also separates the definitions of the functions from the execution.
 
 I only found 9 bugs in the old system but it worked correctly without crashing.  
+
+2. parallel lists
+
+# Dangers of using parallel lists
+The main dangers of using parallel lists is that the data could desynchronise as there is nothing keeping the lists together. The lists have no anchor keeping them down an together. If one of the lists is changed or edited without the other lists, then the data inside the lists would be corrupted. 
+
+
+
