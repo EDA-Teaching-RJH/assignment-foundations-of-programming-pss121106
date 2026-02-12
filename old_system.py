@@ -87,5 +87,5 @@ def run_system_monolith():
             break 
             
         print("End of cycle.")
-
-run_system_monolith()
+if __name__ == "__main__":
+    run_system_monolith()
