@@ -17,5 +17,9 @@ I only found 9 bugs in the old system but it worked correctly without crashing.
 # Dangers of using parallel lists
 The main dangers of using parallel lists is that the data could desynchronise as there is nothing keeping the lists together. The lists have no anchor keeping them down an together. If one of the lists is changed or edited without the other lists, then the data inside the lists would be corrupted. 
 
+2. If someone removes the name but not the ID it would corrupt the logic in the code as the ID would be assigned to a different person. Another effect would be the system crashing and not running correctly. An index  error will come up as the system crashes.
+
+3. My code prevented this as I used a shared index variable. When the remove member code is running I have an index() which finds the ID and the name of the persone associated with that ID. 
+
 
 
